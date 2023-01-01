@@ -2,7 +2,7 @@
 
 Basic SCSS template for quickly starting a project. Uses several NPM packages alongside custom start and build scripts to automatically compile files to a dist folder. Uses browser-sync to create a live server and watches for changes in html, javascript and SCSS files.
 
-![Screenshot](https://user-images.githubusercontent.com/112465173/210162291-09b78a2f-3bef-4b56-b91c-b67b3ab252b5.png)
+![Screenshot](https://user-images.githubusercontent.com/112465173/210163556-e5c8f21c-63c8-42c8-8317-f4de36f2711e.png)
 
 # Usage
 
