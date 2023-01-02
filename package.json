@@ -5,21 +5,21 @@
 	"main": "index.js",
 	"scripts": {
 		"compile": "npm-run-all --parallel compile:*",
-		"compile:sass": "sass src/scss/main.scss:dist/style.css",
+		"compile:sass": "sass src/scss/main.scss:dist/css/style.css",
 		"copy": "npm-run-all --parallel copy:*",
 		"copy:html": "copyfiles -u 1 './src/*.html' dist",
 		"copy:js": "copyfiles -u 1 './src/js/**/*' dist",
 		"copy:assets": "copyfiles -u 1 './src/assets/**/*' dist",
 		"watch": "npm-run-all --parallel watch:*",
-		"watch:sass": "sass --watch src/scss/main.scss:dist/style.css",
+		"watch:sass": "sass --watch src/scss/main.scss:dist/css/style.css",
 		"watch:html": "onchange 'src/*.html' -- npm run copy:html",
 		"watch:js": "onchange 'src/js/*.js' -- npm run copy:js",
 		"watch:assets": "onchange 'src/assets/' -- npm run copy:assets",
-		"serve": "browser-sync start --server dist --files dist",
-		"start": "npm-run-all compile copy --parallel serve watch ",
+		"serve": "browser-sync  start --port 3002 --server dist --files dist",
+		"start": "npm-run-all --parallel serve watch",
 		"prebuild": "rimraf dist",
 		"build": "npm-run-all compile copy ",
-		"postbuild": "postcss dist/*.css -u autoprefixer postcss-minify -r --no-map"
+		"postbuild": "postcss dist/css/*.css -u autoprefixer postcss-minify -r --no-map"
 	},
 	"repository": {
 		"type": "git",
